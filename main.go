@@ -7,9 +7,12 @@ import (
 
 func main() {
 	argsAll := os.Args
-	argsActual := os.Args[1:]
+	argsPartial := os.Args[1:]
 
 	fmt.Printf("All Arguments: %+v\n", argsAll)
-	fmt.Printf("Arguments: %+v\n", argsActual)
-	fmt.Println("Hello.")
+	fmt.Printf("Arguments: %+v\n", argsPartial)
+
+	for index, value := range argsPartial {
+		fmt.Printf("Hello, %s.\t(%d)\n", value, index)
+	}
 }
